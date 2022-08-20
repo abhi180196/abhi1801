@@ -41,28 +41,9 @@ window.digitalData = {
 			domain: host
 		},
 		user:{
-			loginStatus: "false",
-			username : "",
-			bannerClick : "false"
+			loginStatus: localStorage.getItem("loginStatus")?"true":"false",
+			username : localStorage.getItem("username")?localStorage.getItem("username"):"",
+			bannerClick : localStorage.getItem("bannerClick")?localStorage.getItem("bannerClick"):"false"
 		},
 		product : [],
 }
-
-var username = localStorage.getItem("username");
-   
-   var loggedInStatus = localStorage.getItem("loginStatus");
-   
-   if(username && loggedInStatus) {
-   
-       digitalData.userInfo.loginStatus = loggedInStatus;
-   
-       digitalData.userInfo.username = username;
-   
-   }
-
-if(localStorage.getItem("bannerClick")){
-   
-       digitalData.userInfo.bannerClick = localStorage.getItem("bannerClick")
-   
-   }
-
